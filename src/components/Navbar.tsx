@@ -1,6 +1,8 @@
 import Link from 'next/link'
 import React from 'react'
 import Menu from './Menu'
+import CartIcon from './CartIcon'
+import Image from 'next/image'
 
 function Navbar() {
 
@@ -27,9 +29,12 @@ function Navbar() {
 
       {/* Right Link */}
       <div className='hidden md:flex gap-4'>
+        <div>
+          <Image src="/phone.png" alt='' />
+        </div>
         {!user ? <Link href="/login">Login</Link> :
           <Link href="/orders">Orders</Link>}
-        <Link href="/">Contact</Link>
+        <CartIcon />
       </div>
 
     </div>
